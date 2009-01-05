@@ -70,9 +70,9 @@
 
 // begin polling a sensor
 - (void)startPollingSensor:(BOOL)start
-          sensorPort:(UInt8)port
-      sensorSelector:(NSPopUpButton*)sensorSelector
-          pollButton:(NSButton*)pollButton
+                sensorPort:(UInt8)port
+            sensorSelector:(NSPopUpButton*)sensorSelector
+                pollButton:(NSButton*)pollButton
 {
     NSString *sensorType = [sensorSelector titleOfSelectedItem];
     
@@ -287,7 +287,10 @@
     [_nxt resetMotorPosition:kNXTMotorA relative:YES];
     [_nxt resetMotorPosition:kNXTMotorB relative:YES];
     [_nxt resetMotorPosition:kNXTMotorC relative:YES];
-    // XXX: should also reset text fields imediately
+    
+    [servoPositionA setStringValue:@""];
+    [servoPositionB setStringValue:@""];
+    [servoPositionC setStringValue:@""];
 }
 
 
