@@ -151,6 +151,17 @@
     return [object unsignedShortValue];
 }
 
+- (void)clearPortQueues
+{
+    [lsReadLock lock];
+    [lsReadQueue removeAllObjects];
+    [lsReadLock unlock];
+    
+    [lsGetStatusLock lock];
+    [lsGetStatusQueue removeAllObjects];
+    [lsGetStatusLock unlock];
+}
+
 
 
 
@@ -192,7 +203,9 @@
     connected = NO;
     
     for ( port = 0; port < 4; port++ )
-        [self invalidateSensorTimer:port];			
+        [self invalidateSensorTimer:port];	
+    
+    [self clearPortQueues];
 			
     if ( mBluetoothDevice == device )
     {
