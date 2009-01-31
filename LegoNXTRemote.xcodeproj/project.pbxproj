@@ -13,7 +13,6 @@
 		00BF73C90F1142EC00BF054E /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BF73C70F1142EC00BF054E /* IOBluetooth.framework */; };
 		00BF73CA0F1142EC00BF054E /* IOBluetoothUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BF73C80F1142EC00BF054E /* IOBluetoothUI.framework */; };
 		00BF74280F1147E000BF054E /* LegoNXT.h in Headers */ = {isa = PBXBuildFile; fileRef = 00BF73910F11400400BF054E /* LegoNXT.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00D0B84D0F115A5900C9F203 /* LegoNXTRemote.h in Install Frameworks */ = {isa = PBXBuildFile; fileRef = 00D0B84B0F115A5900C9F203 /* LegoNXTRemote.h */; };
 		00D0B84E0F115A5900C9F203 /* LegoNXTRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0B84C0F115A5900C9F203 /* LegoNXTRemote.m */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -39,7 +38,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				008666DE0F1152BC0023983E /* LegoNXT.framework in Install Frameworks */,
-				00D0B84D0F115A5900C9F203 /* LegoNXTRemote.h in Install Frameworks */,
 			);
 			name = "Install Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
