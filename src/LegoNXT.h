@@ -235,7 +235,8 @@ enum {
 
 - (BOOL)connect:(id)delegate;
 
-
+#pragma mark -
+#pragma mark NXT Commands
 /*! \name NXT Commands
  * NXT Commands.
  * Low-level NXT commands.  Each command sends a single message to the brick.
@@ -348,7 +349,8 @@ enum {
 
 
 
-
+#pragma mark -
+#pragma mark NXT Methods
 /*! \name NXT Methods
  * High-level NXT methods
  * Methods consisting of several NXT commands.  Some of which set timers for polling or keep-alive.

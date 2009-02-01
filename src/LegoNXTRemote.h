@@ -12,7 +12,8 @@
 
 @interface LegoNXTRemote : NSObject
 {
-    IBOutlet NXT *_nxt;
+    NXT *_nxt;
+    
     IBOutlet NSLevelIndicator *batteryLevelIndicator;
     IBOutlet NSTextField *connectMessage;
     

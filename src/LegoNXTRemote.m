@@ -165,10 +165,44 @@
     }
 }
 
+- (void)setSensorTextField:(UInt8)port value:(NSString*)value
+{
+    switch ( port )
+    {
+        case kNXTSensor1:
+            [sensorValue1 setStringValue:value];
+            break;
+        case kNXTSensor2:
+            [sensorValue2 setStringValue:value];
+            break;
+        case kNXTSensor3:
+            [sensorValue3 setStringValue:value];
+            break;
+        case kNXTSensor4:
+            [sensorValue4 setStringValue:value];
+            break;
+    }
+}
 
-////////////////////
-// GUI Responders //
-////////////////////
+
+#pragma mark -
+#pragma mark GUI Delegates
+
+- (id)awakeFromNib
+{
+    [NSApp setDelegate:self];
+    
+    // set a status label
+    [connectMessage setStringValue:[NSString stringWithFormat:@"Disconnected"]];
+    
+    return self;
+}
+
+- (BOOL)windowShouldClose:(id)sender
+{
+    [NSApp terminate:self];
+    return true;
+}
 
 - (IBAction)doConnect:(id)sender
 {
@@ -294,10 +328,8 @@
 }
 
 
-//////////////////////////
-// NXT Delegate Methods //
-//////////////////////////
-
+#pragma mark -
+#pragma mark NXT Delegates
 
 // connected
 - (void) NXTDiscovered:(NXT*)nxt
@@ -357,24 +389,6 @@
     [batteryLevelIndicator setIntValue:batteryLevel];
 }
 
-- (void)setSensorTextField:(UInt8)port value:(NSString*)value
-{
-    switch ( port )
-    {
-        case kNXTSensor1:
-            [sensorValue1 setStringValue:value];
-            break;
-        case kNXTSensor2:
-            [sensorValue2 setStringValue:value];
-            break;
-        case kNXTSensor3:
-            [sensorValue3 setStringValue:value];
-            break;
-        case kNXTSensor4:
-            [sensorValue4 setStringValue:value];
-            break;
-    }
-}
 
 
 // read sensor values
@@ -420,14 +434,6 @@
     
     [self setSensorTextField:port value:value];
     //[sensorValue4 setStringValue:value];
-}
-
-- (id)init
-{
-    // set a status label
-    [connectMessage setStringValue:[NSString stringWithFormat:@"Disconnected"]];
-    
-    return self;
 }
 
 // read servo values
