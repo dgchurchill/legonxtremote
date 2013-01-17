@@ -52,7 +52,7 @@
     NSString *hexMessage = [NSString string];
     int i;
     for (i = 0; i < length; i++)
-        hexMessage = [hexMessage stringByAppendingString:[NSString stringWithFormat:@"%.2p, ", *((unsigned char *)message+i)]];
+        hexMessage = [hexMessage stringByAppendingString:[NSString stringWithFormat:@"%02x, ", *((unsigned char *)message+i)]];
     NSLog(@"%@%@", prefix, hexMessage);
 }
 
@@ -212,7 +212,7 @@
         IOReturn error = [mBluetoothDevice closeConnection];
         if ( error != kIOReturnSuccess )
         {
-            NSLog(@"Error - failed to close the device connection with error %08lx.\n", (UInt32)error);
+            NSLog(@"Error - failed to close the device connection with error %08x.\n", error);
             if ([_delegate respondsToSelector:@selector(NXTCommunicationError:code:)])
                 [_delegate NXTCommunicationError:self code:error];
         }
@@ -297,7 +297,7 @@
     [_delegate NXTDiscovered:self];
     
 	if ( error != kIOReturnSuccess ) {
-		NSLog(@"Error - failed to open the RFCOMM channel with error %08lx.\n", (UInt32)error);
+		NSLog(@"Error - failed to open the RFCOMM channel with error %08x.\n", error);
         if ([_delegate respondsToSelector:@selector(NXTCommunicationError:code:)])
             [_delegate NXTCommunicationError:self code:error];
 		[self rfcommChannelClosed:rfcommChannel];

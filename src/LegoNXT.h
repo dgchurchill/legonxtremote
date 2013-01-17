@@ -455,4 +455,4 @@ enum {
 - (void)NXTMessageRead:(NXT*)nxt message:(NSData*)message localInbox:(UInt8)localInbox;
 @end
 
-#endif __LegoNXT_H__
+#endif // __LegoNXT_H__
