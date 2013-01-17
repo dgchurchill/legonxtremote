@@ -188,14 +188,12 @@
 #pragma mark -
 #pragma mark GUI Delegates
 
-- (id)awakeFromNib
+- (void)awakeFromNib
 {
     [NSApp setDelegate:self];
     
     // set a status label
     [connectMessage setStringValue:[NSString stringWithFormat:@"Disconnected"]];
-    
-    return self;
 }
 
 - (BOOL)windowShouldClose:(id)sender

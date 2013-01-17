@@ -307,9 +307,9 @@
 	
 }
 
-- (void)rfcommChannelData:(IOBluetoothRFCOMMChannel*)rfcommChannel data:(void *)dataPointer length:(size_t)dataLength
+- (void)rfcommChannelData:(IOBluetoothRFCOMMChannel*)rfcommChannel data:(char *)dataPointer length:(size_t)dataLength
 {
-    int i = 0;
+    size_t i = 0;
     
     [self dumpMessage:dataPointer length:dataLength prefix:@"<- "];
     
